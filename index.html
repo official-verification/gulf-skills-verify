@@ -8,6 +8,7 @@
     :root {
       --navy: #002d5f;
       --navy2: #063b75;
+      --blue: #0b5aa0;
       --gold: #ebb02d;
       --gold2: #f7d28b;
       --text: #08213f;
@@ -24,21 +25,22 @@
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: linear-gradient(135deg, #eef4fb 0%, #ffffff 46%, #eef4fb 100%);
+      background: #eef4fb;
       overflow-x: hidden;
     }
 
     .page-shell {
       position: relative;
-      min-height: 100vh;
+      width: 100%;
+      min-height: 1346px;
       overflow: hidden;
       background:
-        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.96), rgba(255,255,255,0.75) 38%, rgba(238,244,251,0.96) 78%),
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.98), rgba(255,255,255,0.78) 38%, rgba(238,244,251,0.96) 78%),
         linear-gradient(135deg, #eaf1f8 0%, #ffffff 46%, #eaf1f8 100%);
     }
 
     .decor-bg {
-      position: fixed;
+      position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
@@ -53,15 +55,18 @@
 
     .top-bar {
       width: 100%;
+      height: 49px;
       background: linear-gradient(90deg, #00264f 0%, #063b75 50%, #00264f 100%);
       color: var(--gold);
       text-align: center;
-      padding: 13px 12px 12px;
       border-bottom: 4px solid var(--gold);
       box-shadow: 0 10px 25px rgba(0,45,95,0.20);
       font-size: 24px;
       font-weight: 900;
       letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .top-bar span {
@@ -82,7 +87,7 @@
     }
 
     .main {
-      padding: 26px 14px 0;
+      padding: 44px 14px 0;
     }
 
     .container {
@@ -93,14 +98,14 @@
     .hero {
       text-align: center;
       position: relative;
-      padding: 10px 10px 0;
+      padding: 0 10px;
     }
 
     .logo-img {
-      width: min(560px, 92%);
+      width: min(520px, 92%);
       height: auto;
       display: block;
-      margin: 0 auto 12px;
+      margin: 0 auto 11px;
       filter: drop-shadow(0 16px 28px rgba(0,45,95,0.16));
     }
 
@@ -108,9 +113,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 9px;
       color: var(--gold);
-      margin: 5px auto 17px;
+      margin: 4px auto 19px;
       font-weight: 900;
       font-size: 18px;
     }
@@ -118,7 +123,7 @@
     .mini-divider::before,
     .mini-divider::after {
       content: "";
-      width: 84px;
+      width: 80px;
       height: 2px;
       background: linear-gradient(90deg, transparent, #315c8a, transparent);
     }
@@ -149,7 +154,7 @@
 
     .status-section {
       text-align: center;
-      margin: 26px 0 20px;
+      margin: 28px 0 20px;
     }
 
     .status-valid,
@@ -194,9 +199,9 @@
     }
 
     .details-card {
-      width: min(760px, 100%);
+      width: min(780px, 100%);
       margin: 0 auto;
-      background: rgba(255,255,255,0.89);
+      background: rgba(255,255,255,0.91);
       border: 1px solid rgba(0,45,95,0.14);
       border-radius: 20px;
       overflow: hidden;
@@ -276,13 +281,13 @@
     }
 
     .note-box {
-      width: min(760px, 100%);
+      width: min(780px, 100%);
       margin: 22px auto 36px;
       padding: 17px 22px;
       display: flex;
       align-items: flex-start;
       gap: 18px;
-      background: rgba(255,255,255,0.90);
+      background: rgba(255,255,255,0.91);
       border: 1px solid rgba(0,45,95,0.16);
       border-left: 6px solid var(--gold);
       border-radius: 14px;
@@ -308,18 +313,16 @@
     }
 
     .trust-section {
-      background: linear-gradient(135deg, #00264f 0%, #063b75 55%, #001f43 100%);
       color: #ffffff;
-      border-top: 4px solid var(--gold);
       position: relative;
       overflow: visible;
-      padding: 58px 15px 22px;
-      margin-top: 0;
+      padding: 56px 15px 22px;
+      margin-top: 10px;
     }
 
     .center-badge {
       position: absolute;
-      top: -7px;
+      top: -9px;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 112px;
@@ -370,10 +373,9 @@
     }
 
     .footer {
-      background: #00264f;
       color: #dbeafe;
       text-align: center;
-      padding: 16px;
+      padding: 12px 16px 18px;
       font-size: 13px;
       border-top: 1px solid rgba(255,255,255,0.12);
     }
@@ -382,11 +384,11 @@
       color: var(--gold2);
     }
 
-    .hidden {
-      display: none;
-    }
-
     @media only screen and (max-width: 760px) {
+      .page-shell {
+        min-height: 1200px;
+      }
+
       .top-bar {
         font-size: 18px;
       }
@@ -397,7 +399,7 @@
       }
 
       .main {
-        padding: 22px 10px 0;
+        padding: 24px 10px 0;
       }
 
       .logo-img {
@@ -488,7 +490,7 @@
 <body>
   <div class="page-shell">
 
-    <svg class="decor-bg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+    <svg class="decor-bg" viewBox="0 0 1216 1346" preserveAspectRatio="none">
       <defs>
         <linearGradient id="blueWave" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#001f43"/>
@@ -501,40 +503,41 @@
           <stop offset="100%" stop-color="#ebb02d"/>
         </linearGradient>
 
-        <pattern id="mapDots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-          <circle cx="3" cy="3" r="1.7" fill="#9aaabd" opacity="0.42"/>
+        <pattern id="mapDots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#9aaabd" opacity="0.45"/>
         </pattern>
       </defs>
 
-      <path d="M0 90 L300 444 L0 720 Z" fill="url(#blueWave)" opacity="1"/>
-      <path d="M0 120 L260 430 L0 640 Z" fill="#00264f" opacity="0.86"/>
-      <path d="M0 70 L308 452" stroke="url(#goldWave)" stroke-width="9" opacity="0.98"/>
-      <path d="M0 392 C90 452 175 500 300 590" stroke="#dfe7ef" stroke-width="20" opacity="0.72" fill="none"/>
-      <path d="M0 420 C105 485 205 548 335 662" stroke="#eef3f8" stroke-width="16" opacity="0.72" fill="none"/>
+      <rect width="1216" height="1346" fill="transparent"/>
 
-      <path d="M-250 120 C80 160 200 360 330 590" stroke="#cbd6e2" stroke-width="1.2" opacity="0.55" fill="none"/>
-      <path d="M-230 140 C95 170 220 360 350 590" stroke="#cbd6e2" stroke-width="1.2" opacity="0.45" fill="none"/>
-      <path d="M-210 160 C110 185 240 370 370 600" stroke="#cbd6e2" stroke-width="1.2" opacity="0.38" fill="none"/>
-      <path d="M-190 180 C125 205 260 385 390 615" stroke="#cbd6e2" stroke-width="1.2" opacity="0.34" fill="none"/>
+      <path d="M0 88 L255 455 L0 712 Z" fill="url(#blueWave)" opacity="1"/>
+      <path d="M0 118 L220 430 L0 640 Z" fill="#00264f" opacity="0.88"/>
+      <path d="M0 68 L258 450" stroke="url(#goldWave)" stroke-width="7" opacity="0.98"/>
+      <path d="M0 392 C82 452 174 520 290 640" stroke="#dfe7ef" stroke-width="18" opacity="0.70" fill="none"/>
+      <path d="M0 425 C105 495 200 560 320 690" stroke="#eef3f8" stroke-width="14" opacity="0.78" fill="none"/>
 
-      <path d="M1920 420 C1780 520 1670 595 1510 617" stroke="#ebb02d" stroke-width="13" opacity="0.92" fill="none"/>
-      <path d="M1920 380 C1770 500 1660 575 1500 600" stroke="#d8e1ea" stroke-width="28" opacity="0.70" fill="none"/>
-      <path d="M1920 456 C1780 548 1675 620 1505 650" stroke="#eef3f8" stroke-width="20" opacity="0.72" fill="none"/>
-      <path d="M2050 130 C1775 210 1710 430 1515 655" stroke="#cbd6e2" stroke-width="1.2" opacity="0.44" fill="none"/>
-      <path d="M2065 160 C1795 240 1730 450 1535 680" stroke="#cbd6e2" stroke-width="1.2" opacity="0.40" fill="none"/>
-      <path d="M2080 190 C1815 270 1750 470 1555 705" stroke="#cbd6e2" stroke-width="1.2" opacity="0.36" fill="none"/>
+      <path d="M-170 105 C80 155 200 360 330 640" stroke="#cbd6e2" stroke-width="1" opacity="0.50" fill="none"/>
+      <path d="M-150 135 C95 180 220 370 350 650" stroke="#cbd6e2" stroke-width="1" opacity="0.42" fill="none"/>
+      <path d="M-130 165 C110 205 240 390 370 670" stroke="#cbd6e2" stroke-width="1" opacity="0.36" fill="none"/>
+      <path d="M-110 195 C125 230 260 410 390 690" stroke="#cbd6e2" stroke-width="1" opacity="0.32" fill="none"/>
+
+      <path d="M1216 388 C1090 500 985 590 825 630" stroke="#d8e1ea" stroke-width="24" opacity="0.66" fill="none"/>
+      <path d="M1216 420 C1088 530 985 610 820 652" stroke="#ebb02d" stroke-width="11" opacity="0.92" fill="none"/>
+      <path d="M1216 460 C1080 555 985 638 815 675" stroke="#eef3f8" stroke-width="18" opacity="0.74" fill="none"/>
+      <path d="M1330 145 C1090 260 1010 470 820 675" stroke="#cbd6e2" stroke-width="1" opacity="0.44" fill="none"/>
+      <path d="M1345 175 C1110 285 1030 490 842 700" stroke="#cbd6e2" stroke-width="1" opacity="0.38" fill="none"/>
+      <path d="M1360 205 C1130 310 1050 510 865 725" stroke="#cbd6e2" stroke-width="1" opacity="0.34" fill="none"/>
 
       <g opacity="0.82">
-        <path d="M1115 120 C1165 80 1250 92 1290 135 C1320 166 1292 210 1235 206 C1180 202 1120 180 1115 120Z" fill="url(#mapDots)"/>
-        <path d="M1320 110 C1395 72 1510 90 1585 142 C1648 185 1640 260 1555 270 C1468 280 1390 242 1345 198 C1312 166 1298 130 1320 110Z" fill="url(#mapDots)"/>
-        <path d="M1225 220 C1275 230 1300 300 1270 365 C1240 428 1188 408 1178 348 C1168 292 1185 242 1225 220Z" fill="url(#mapDots)"/>
-        <path d="M1000 130 C1060 85 1138 98 1135 165 C1132 226 1052 225 1008 195 C975 172 976 148 1000 130Z" fill="url(#mapDots)"/>
-        <path d="M940 215 C1015 205 1085 260 1080 335 C1075 420 1000 415 962 350 C925 285 900 235 940 215Z" fill="url(#mapDots)"/>
-        <path d="M1615 260 C1665 245 1715 270 1730 315 C1748 370 1690 405 1640 368 C1605 342 1585 278 1615 260Z" fill="url(#mapDots)"/>
+        <path d="M760 102 C810 70 885 78 920 125 C945 158 920 195 870 192 C815 188 765 162 760 102Z" fill="url(#mapDots)"/>
+        <path d="M940 95 C1010 65 1115 80 1170 130 C1225 178 1190 250 1110 260 C1030 270 955 230 925 185 C902 150 910 108 940 95Z" fill="url(#mapDots)"/>
+        <path d="M825 220 C875 230 900 300 870 360 C840 420 790 400 780 340 C770 285 790 235 825 220Z" fill="url(#mapDots)"/>
+        <path d="M675 125 C730 82 800 98 798 160 C795 220 725 220 685 192 C650 168 650 145 675 125Z" fill="url(#mapDots)"/>
+        <path d="M640 220 C710 205 775 260 770 335 C765 410 700 410 660 350 C622 292 602 238 640 220Z" fill="url(#mapDots)"/>
       </g>
 
-      <path d="M0 884 C420 965 1190 980 1920 878 L1920 1080 L0 1080 Z" fill="#00264f"/>
-      <path d="M0 882 C420 960 1190 974 1920 872" stroke="#ebb02d" stroke-width="6" opacity="0.98" fill="none"/>
+      <path d="M0 1072 C290 1140 785 1160 1216 1070 L1216 1346 L0 1346 Z" fill="#00264f"/>
+      <path d="M0 1070 C290 1135 785 1154 1216 1064" stroke="#ebb02d" stroke-width="5" opacity="0.98" fill="none"/>
     </svg>
 
     <div class="content-layer">
@@ -649,7 +652,7 @@
   </div>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbyzyk08aMV7flAFqHbY6BjEFz2DFHz9VLZYR_hF3Q0eaTH2k0tk8eITLL9CdZx3_WTF/exec";
+    const API_URL = "https://script.google.com/macros/s/AKfycbyBKjHCpfQ95fuJ-oJSSKpNDTeXvNS4A2QVwCb2SSg9DKqwnpX1mi2YOzWd4OYNVYHL/exec";
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
