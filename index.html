@@ -421,7 +421,7 @@
     .authorized-section {
       width: min(860px, 100%);
       margin: 0 auto 36px;
-      padding: 14px 18px;
+      padding: 18px 22px 20px;
       background: rgba(255,255,255,0.94);
       border: 1px solid rgba(0,45,95,0.14);
       border-radius: 16px;
@@ -429,13 +429,51 @@
       text-align: center;
     }
 
-    .authorized-strip {
-      width: 100%;
-      max-width: 858px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    .authorized-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .authorized-title::before,
+    .authorized-title::after {
+      content: "";
+      height: 2px;
+      width: 130px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .authority-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .authority-logo-card {
+      min-height: 86px;
+      border: 1px solid #dce7f2;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-shadow: 0 8px 18px rgba(0,45,95,0.06);
+    }
+
+    .authority-logo-card img {
+      max-width: 100%;
+      max-height: 62px;
       object-fit: contain;
+      display: block;
     }
 
     .trust-section {
@@ -622,7 +660,20 @@
       }
 
       .authorized-section {
-        padding: 10px;
+        padding: 16px 12px 18px;
+      }
+
+      .authorized-title {
+        font-size: 14px;
+      }
+
+      .authorized-title::before,
+      .authorized-title::after {
+        width: 45px;
+      }
+
+      .authority-logo-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .trust-grid {
@@ -782,7 +833,33 @@
           </section>
 
           <section class="authorized-section">
-            <img src="authorized-recognized.webp" class="authorized-strip" alt="Authorized and Recognized By LEEA, IOSH, TÜV SÜD, DNV, ASTM, ASNT">
+            <div class="authorized-title">Authorized & Recognized By</div>
+
+            <div class="authority-logo-grid">
+              <div class="authority-logo-card">
+                <img src="./leea-logo.png?v=4" alt="LEEA Logo">
+              </div>
+
+              <div class="authority-logo-card">
+                <img src="./iosh-logo.png?v=4" alt="IOSH Logo">
+              </div>
+
+              <div class="authority-logo-card">
+                <img src="./tuv-sud-logo.png?v=4" alt="TÜV SÜD Logo">
+              </div>
+
+              <div class="authority-logo-card">
+                <img src="./dnv-logo.png?v=4" alt="DNV Logo">
+              </div>
+
+              <div class="authority-logo-card">
+                <img src="./astm-logo.png?v=4" alt="ASTM Logo">
+              </div>
+
+              <div class="authority-logo-card">
+                <img src="./asnt-logo.png?v=4" alt="ASNT Logo">
+              </div>
+            </div>
           </section>
 
         </div>
